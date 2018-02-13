@@ -312,7 +312,7 @@ module.exports = (function() {
 			if (prevTime !== false)
 			{
 				timeLabels.push({
-					text: ("0" + i.getUTCHours()).slice(-2)+':'+("0" + i.getUTCMinutes()).slice(-2),
+					text: (1+i.getMonth())+"/"+i.getDate(),
 					from: new Date(prevTime),
 					to: new Date(i.getTime())
 				});
@@ -402,7 +402,7 @@ module.exports = (function() {
 		url += 'chco='+colors.join(',')+'&';
 		url += 'chls='+styles.join('|')+'&';
 		url += 'chs='+this.width+'x'+this.height+'&';
-		url += 'chxr=1,0,'+topEdge+',10&'
+		url += 'chxr=1,0,'+topEdge+','+topEdge/10+'&'
 		url += 'chg=20,10,1,5&';
 		url += 'chdl='+titles.join('|')+'&'
 		url += 'chd=e:'+datasetsAsString;
